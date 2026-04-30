@@ -1,0 +1,36 @@
+# --- Node/Dependencies ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- TypeScript/Build Output ---
+# We ignore the dist folder because we only want to track the source .ts files
+dist/
+build/
+
+# --- Environment Variables ---
+# NEVER commit .env files to GitHub. This is a major security risk.
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# --- VS Code / IDEs ---
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- OS Generated Files ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
