@@ -50,7 +50,7 @@ This system is designed to survive application crashes. To test this behavior:
 
 1. **Seed the bank:** `POST /stocks` with a body like `{"stocks": [{"name": "TSLA", "quantity": 100}]}`
 2. **View the bank:** GET /stocks (Note the successful response).
-3. **Trigger a fatal crash:** `POST /chaos` (The process will immediately terminate, returning a 502 error as the connection drops).
+3. **Trigger a fatal crash:** `POST /chaos` (The process will immediately terminate the specific API instance (out of the 3), returning a 502 error as the connection drops).
 4. **View the bank again:** `GET /stocks`. Nginx will instantly route your request to a surviving replica, and you will receive a successful `200 OK` response with intact data retrieved from Redis.
 
 Or you can test this behavior directly from the UI or via the API:
@@ -58,7 +58,7 @@ Or you can test this behavior directly from the UI or via the API:
 
 2. **Execute Trades:** Buy and sell a few stocks to verify the system is working and the database is active.
 
-3. **Trigger a fatal crash:** Click the "Trigger Chaos" button. The backend process handling that specific request will instantly terminate.
+3. **Trigger a fatal crash:** Click the "Trigger Chaos" button. The backend process handling that specific request will instantly terminate the specific API instance (out of the 3).
 
 4. **Observe the Failover:** Continue clicking "Buy" or "Sell". Nginx will instantly route your request to a surviving replica. Your trades will continue to execute perfectly, and you will receive successful responses with your data fully intact from Redis.
 
