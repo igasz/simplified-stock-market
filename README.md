@@ -11,7 +11,9 @@ To strictly meet the High Availability (HA) requirements and ensure the applicat
 3. **Shared State (Redis):** Because local memory does not survive instance crashes, all state (Bank Inventory, Wallet Balances, Audit Log) is stored in a centralized Redis container. 
 4. **Concurrency Control:** Buying and selling stocks inherently creates race conditions. This API utilizes Redis atomic operations (e.g., `HINCRBY`) combined with compensating transactions (reverting state if a balance drops below zero) to guarantee data integrity without complex locking mechanisms.
 5. **Frontend Dashboard (React/Vite):** 
-   A dark-mode, responsive SPA simulating a premium wealth management terminal. It uses Vite's built-in proxy to seamlessly route API requests to the Nginx entry point without triggering Cross-Origin Resource Sharing issues. This completely decouples the UI from the backend.
+A dark-mode, responsive SPA simulating a premium wealth management terminal. It uses Vite's built-in proxy to seamlessly route API requests to the Nginx entry point without triggering Cross-Origin Resource Sharing issues. This completely decouples the UI from the backend.
+
+![Stock Market](./frontend-screenshot.png)
 
 ## Prerequisites
 
