@@ -1,0 +1,183 @@
+/* Importujemy czcionki widoczne w Twoim design systemie */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Noto+Serif:wght@600;700&display=swap');
+
+:root {
+  --bg-main: #0a0a0a; 
+  --bg-panel: #121212; 
+  --gold: #d4af37; 
+  --gold-dim: rgba(212, 175, 55, 0.15);
+  --text-main: #f5f5f5;
+  --text-muted: #888888;
+  --border: #222222;
+}
+
+body { 
+  font-family: 'Manrope', system-ui, sans-serif; 
+  background-color: var(--bg-main); 
+  color: var(--text-main); 
+  margin: 0; 
+  padding: 40px 20px; 
+}
+
+.container { 
+  max-width: 1000px; 
+  margin: 0 auto; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 40px;
+}
+
+header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  background: var(--bg-panel); 
+  padding: 30px 40px; 
+  border-radius: 12px; 
+  border: 1px solid var(--border); 
+}
+
+h1 { 
+  margin: 0; 
+  font-size: 1.8rem; 
+  font-family: 'Noto Serif', serif; 
+  color: var(--gold); 
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h2 { 
+  margin-top: 0; 
+  margin-bottom: 12px; 
+  font-size: 0.9rem; 
+  font-family: 'Manrope', sans-serif;
+  border-bottom: 1px solid var(--border); 
+  padding-bottom: 20px;
+  font-weight: 600; 
+  color: var(--text-muted); 
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px;
+}
+
+.panel { 
+  background: var(--bg-panel); 
+  padding: 40px;
+  border-radius: 12px; 
+  border: 1px solid var(--border); 
+}
+
+ul { list-style: none; padding: 0; margin: 0; }
+
+li { 
+  padding: 20px 0;
+  border-bottom: 1px dashed var(--border); 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+li:last-child { border-bottom: none; }
+
+.trade-desk { 
+  text-align: center; 
+}
+
+.trade-controls { 
+  display: flex; 
+  justify-content: center; 
+  gap: 24px;
+  margin-top: 32px;
+}
+
+select { 
+  padding: 14px 24px; 
+  font-size: 0.95rem; 
+  border-radius: 4px; 
+  border: 1px solid var(--border); 
+  background-color: var(--bg-main); 
+  color: var(--text-main); 
+  cursor: pointer; 
+  outline: none; 
+  font-family: 'Manrope', sans-serif;
+}
+
+select:focus { border-color: var(--gold); }
+
+
+button { 
+  padding: 14px 36px;
+  font-size: 0.85rem; 
+  border-radius: 4px; 
+  border: none; 
+  font-weight: 700; 
+  cursor: pointer; 
+  transition: all 0.2s ease; 
+  text-transform: uppercase; 
+  letter-spacing: 1.5px; 
+  font-family: 'Manrope', sans-serif;
+}
+
+.buy-btn { 
+  background: var(--gold); 
+  color: #000; 
+}
+.buy-btn:hover { 
+  background: #ebd171; 
+}
+
+.sell-btn { 
+  background: #2a2a2a;
+  color: var(--text-main); 
+  border: 1px solid #444; 
+}
+.sell-btn:hover { 
+  background: #3a3a3a;
+  border-color: #666;
+}
+
+.header-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.chaos-btn { 
+  background: transparent; 
+  border: 1px solid #4a1919; 
+  color: #ef4444; 
+  font-size: 0.75rem;
+}
+.chaos-btn:hover { 
+  background: #4a1919; 
+  color: white; 
+}
+
+.seed-btn { 
+  background: transparent; 
+  border: 1px solid var(--gold); 
+  color: var(--gold); 
+  padding: 14px 24px;
+}
+
+.seed-btn:hover { 
+  background: var(--gold); 
+  color: #000; 
+}
+
+.text-green { color: var(--gold); font-weight: bold; } 
+.text-red { color: var(--text-muted); font-weight: bold; }
+
+.logs { max-height: 350px; overflow-y: auto; }
+.logs::-webkit-scrollbar { width: 4px; }
+.logs::-webkit-scrollbar-track { background: var(--bg-main); }
+.logs::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.logs::-webkit-scrollbar-thumb:hover { background: var(--gold); }
